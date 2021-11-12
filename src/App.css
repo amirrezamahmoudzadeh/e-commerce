@@ -1,0 +1,10 @@
+.App {
+  max-width: 700px;
+  margin: 0 auto;
+  direction: rtl;
+}
+body{
+  box-sizing: border-box;
+  width: 100vw;
+  overflow-x: hidden;
+}
