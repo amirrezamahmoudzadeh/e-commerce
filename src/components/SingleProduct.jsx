@@ -9,7 +9,7 @@ import { useMediaQuery } from "@mui/material";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import RelatedSlider from "./RelatedSlider";
 
-function SingleProduct({ item, onAddCart , selectProduct }) {
+function SingleProduct({ item, onAddCart, selectProduct }) {
   const matches = useMediaQuery("(min-width:600px)");
   if (!item) {
     return (
@@ -58,9 +58,11 @@ function SingleProduct({ item, onAddCart , selectProduct }) {
             >
               {item.price.formatted_with_symbol}
             </Typography>
-            <Typography variant="body2" color="initial">
-              {item.description}
-            </Typography>
+            <Typography
+              dangerouslySetInnerHTML={{ __html: item.description }}
+              variant="body2"
+              color="initial"
+            ></Typography>
           </CardContent>
           <CardActions
             sx={{
@@ -76,7 +78,10 @@ function SingleProduct({ item, onAddCart , selectProduct }) {
           </CardActions>
         </div>
       </Card>
-      <RelatedSlider selectProduct={selectProduct} related={item.related_products} />
+      <RelatedSlider
+        selectProduct={selectProduct}
+        related={item.related_products}
+      />
     </>
   );
 }

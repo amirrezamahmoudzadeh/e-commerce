@@ -22,7 +22,7 @@ function ItemProduct({ item, onAddCart , selectProduct }) {
           backgroundPosition: "center center",
         }}
       />
-      <CardContent sx={{backgroundColor: "#0288d1"}}>
+      <CardContent>
         <div style={{ display: "flex", justifyContent: "space-between" , maxHeight:"2rem" }}>
           <Typography variant="h5" color="initial">
             {item.name}
@@ -31,12 +31,9 @@ function ItemProduct({ item, onAddCart , selectProduct }) {
             {item.price.formatted_with_symbol}
           </Typography>
         </div>
-        <Typography variant="body2" color="initial">
-          {item.description}
-        </Typography>
       </CardContent>
       <CardActions
-        sx={{ display: "flex", justifyContent: "flex-end" , backgroundColor: "#0288d1" }}
+        sx={{ display: "flex", justifyContent: "flex-end" }}
         onClick={(e) => onAddCart(item.id, 1, e)}
       >
         <IconButton aria-label="Add To Cart" color="secondary" >

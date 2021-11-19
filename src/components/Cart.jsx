@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Typography, Button, Grid, Modal , Box } from "@mui/material";
+import { Container, Typography, Button, Grid, Modal, Box } from "@mui/material";
 import ItemCart from "./ItemCart";
 import { useMediaQuery } from "@mui/material";
 
@@ -29,7 +29,10 @@ function Cart({
 
   const FilledCart = () => {
     const [open, setOpen] = React.useState(false);
-    const handleOpen = () => setOpen(true);
+
+    const handleOpen = async () => {
+      setOpen(true);
+    };
     const handleClose = () => setOpen(false);
     return (
       <>
@@ -107,11 +110,20 @@ function Cart({
                 p: 5,
               }}
             >
-              <Typography id="modal-modal-title" variant="h6" component="h2" sx={{direction: "rtl"}}>
-                با تشکر  از خرید شما 
+              <Typography
+                id="modal-modal-title"
+                variant="h6"
+                component="h2"
+                sx={{ direction: "rtl" }}
+              >
+                با تشکر از خرید شما
               </Typography>
-              <Typography id="modal-modal-title" variant="subtitle1" sx={{direction: "rtl"}}>
-                سفارش ما در اسرع وقت به دست شما خواهد رسید 
+              <Typography
+                id="modal-modal-title"
+                variant="subtitle1"
+                sx={{ direction: "rtl" }}
+              >
+                سفارش ما در اسرع وقت به دست شما خواهد رسید
               </Typography>
             </Box>
           </Modal>
